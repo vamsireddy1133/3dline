@@ -87,6 +87,169 @@
       { opacity: 1, scale: 1, duration: .8, ease: 'power2.out',
         scrollTrigger: { trigger: '#contact', start: 'top 78%', toggleActions: 'play none none none' } }
     );
+
+    /* stats items */
+    gsap.utils.toArray('.stat-item').forEach(function(el, i) {
+      gsap.fromTo(el,
+        { opacity: 0, y: 40, rotateX: 20 },
+        { opacity: 1, y: 0, rotateX: 0, duration: .65, delay: i * .1, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' } }
+      );
+    });
+
+    initThreeHero();
+    initTilt();
+    initCounters();
+  }
+
+  /* ── Three.js 3D Hero ──────────────────────────────── */
+  function initThreeHero() {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    var hero  = canvas.parentElement;
+    var W = hero.offsetWidth;
+    var H = hero.offsetHeight;
+
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(W, H);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
+
+    var scene  = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000);
+    camera.position.z = 35;
+
+    /* Neon particle field */
+    var count = 1200;
+    var pPos  = new Float32Array(count * 3);
+    var pCol  = new Float32Array(count * 3);
+    for (var i = 0; i < count; i++) {
+      pPos[i*3]   = (Math.random() - .5) * 110;
+      pPos[i*3+1] = (Math.random() - .5) * 80;
+      pPos[i*3+2] = (Math.random() - .5) * 70;
+      if (Math.random() > .5) {
+        pCol[i*3] = .9;  pCol[i*3+1] = 0;   pCol[i*3+2] = .15; /* red */
+      } else {
+        pCol[i*3] = 0;   pCol[i*3+1] = .7;  pCol[i*3+2] = 1;   /* blue */
+      }
+    }
+    var pGeo = new THREE.BufferGeometry();
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    pGeo.setAttribute('color',    new THREE.BufferAttribute(pCol, 3));
+    var pMat = new THREE.PointsMaterial({ size: .22, vertexColors: true, transparent: true, opacity: .8 });
+    scene.add(new THREE.Points(pGeo, pMat));
+
+    /* Wireframe materials */
+    var redWire   = new THREE.MeshBasicMaterial({ color: 0xe60026, wireframe: true, transparent: true, opacity: .18 });
+    var blueWire  = new THREE.MeshBasicMaterial({ color: 0x00b4ff, wireframe: true, transparent: true, opacity: .14 });
+    var whiteWire = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: .05 });
+
+    /* Floating wireframe geometries */
+    var ico   = new THREE.Mesh(new THREE.IcosahedronGeometry(7, 1), redWire);
+    ico.position.set(-18, 5, -8);
+    scene.add(ico);
+
+    var torus = new THREE.Mesh(new THREE.TorusGeometry(6, 1.8, 8, 24), blueWire);
+    torus.position.set(18, -5, -6);
+    scene.add(torus);
+
+    var oct   = new THREE.Mesh(new THREE.OctahedronGeometry(5, 0), whiteWire);
+    oct.position.set(5, 10, -20);
+    scene.add(oct);
+
+    var tetra = new THREE.Mesh(new THREE.TetrahedronGeometry(4, 0), redWire);
+    tetra.position.set(-6, -10, -12);
+    scene.add(tetra);
+
+    var sphere = new THREE.Mesh(new THREE.IcosahedronGeometry(3, 0), blueWire);
+    sphere.position.set(10, 8, -5);
+    scene.add(sphere);
+
+    /* Perspective grid floor */
+    var grid = new THREE.GridHelper(200, 40, 0x00b4ff, 0x00b4ff);
+    grid.material.opacity = .05;
+    grid.material.transparent = true;
+    grid.position.y = -22;
+    scene.add(grid);
+
+    /* Mouse parallax */
+    var mx = 0, my = 0;
+    var heroEl = document.getElementById('hero');
+    if (heroEl) {
+      heroEl.addEventListener('mousemove', function(e) {
+        var r = heroEl.getBoundingClientRect();
+        mx = ((e.clientX - r.left) / r.width  - .5) * 2;
+        my = ((e.clientY - r.top)  / r.height - .5) * 2;
+      });
+    }
+
+    /* Animation loop */
+    var clock = new THREE.Clock();
+    function tick() {
+      requestAnimationFrame(tick);
+      var t = clock.getElapsedTime();
+      ico.rotation.x   = t * .25;
+      ico.rotation.y   = t * .35;
+      torus.rotation.x = t * .4;
+      torus.rotation.z = t * .28;
+      oct.rotation.y   = t * .3;
+      oct.rotation.z   = t * .2;
+      tetra.rotation.x = t * .45;
+      tetra.rotation.y = t * .25;
+      sphere.rotation.y = t * .5;
+      camera.position.x += (mx * 5  - camera.position.x) * .04;
+      camera.position.y += (-my * 3 - camera.position.y) * .04;
+      camera.lookAt(scene.position);
+      renderer.render(scene, camera);
+    }
+    tick();
+
+    /* Resize */
+    window.addEventListener('resize', function() {
+      var w = hero.offsetWidth, h = hero.offsetHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    });
+  }
+
+  /* ── VanillaTilt 3D card tilt ──────────────────────── */
+  function initTilt() {
+    if (typeof VanillaTilt === 'undefined') return;
+    VanillaTilt.init(document.querySelectorAll('.game-card'), {
+      max:          12,
+      speed:        500,
+      glare:        true,
+      'max-glare':  0.2,
+      scale:        1.04,
+      gyroscope:    true,
+    });
+  }
+
+  /* ── Stat counters ─────────────────────────────────── */
+  function initCounters() {
+    var nums = document.querySelectorAll('.stat-num');
+    if (!nums.length) return;
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el     = entry.target;
+        var target = parseInt(el.dataset.target, 10);
+        var suffix = el.dataset.suffix || '+';
+        var dur    = 1800;
+        var start  = performance.now();
+        function step(now) {
+          var p = Math.min((now - start) / dur, 1);
+          var ease = 1 - Math.pow(1 - p, 3); /* ease-out-cubic */
+          el.textContent = Math.floor(ease * target).toLocaleString() + (p >= 1 ? suffix : '');
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      });
+    }, { threshold: .5 });
+    nums.forEach(function(n) { obs.observe(n); });
   }
 
   /* fallback if GSAP CDN fails */

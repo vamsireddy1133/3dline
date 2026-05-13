@@ -14,6 +14,10 @@
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <!-- Three.js 3D background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <!-- VanillaTilt 3D card hover -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -47,6 +51,8 @@
 <!-- ═══════════════ HERO ══════════════════════════════ -->
 <section id="hero" aria-labelledby="heroTitle">
   <div class="hero-bg" role="img" aria-label="Futuristic gaming environment"></div>
+  <!-- Three.js renders here; CSS particles are fallback if Three.js fails -->
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div id="particles" aria-hidden="true"></div>
 
   <div class="hero-content">
@@ -99,6 +105,33 @@
     <span>★ VIRTUAL REALITY</span><span>★ NEXT-GEN GAMING</span><span>★ GAMING HUB</span>
   </div>
 </div>
+
+<!-- ═══════════════ STATS ════════════════════════════ -->
+<section id="stats" aria-label="Hub statistics">
+  <div class="section-hdr reveal">
+    <p class="section-tag t-blue">// BY THE NUMBERS //</p>
+    <h2 class="section-title">THE <span class="accent-red">HUB</span> IN STATS</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num" data-target="6" data-suffix="+">0</div>
+      <div class="stat-label">Gaming Stations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="50" data-suffix="+">0</div>
+      <div class="stat-label">VR Titles</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="10000" data-suffix="+">0</div>
+      <div class="stat-label">Happy Gamers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="365" data-suffix="">0</div>
+      <div class="stat-label">Days Open / Year</div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════ DIGITAL GAMING ══════════════════ -->
 <section class="section" id="games" aria-labelledby="gamesTitle">
