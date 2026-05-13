@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About 3Dline VR Gaming Hub — Beeramguda's premium gaming destination offering VR, PS5, racing simulators and table sports for all ages. FAQ & more inside." />
+  <title>About Us | 3Dline VR Gaming Hub — Premium Gaming in Beeramguda, Hyderabad</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════ LOADER ════════════════════════════ -->
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-text">3DLINE VR GAMING HUB</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ═══════════════ NAVBAR ═══════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="3Dline VR Gaming Hub Home">3DLINE VR GAMING HUB</a>
+
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="games.html">Games</a></li>
+    <li><a href="table-sports.html">Table Sports</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger" role="button" tabindex="0"
+       aria-label="Toggle menu" aria-expanded="false"
+       onclick="toggleMenu()" onkeydown="if(event.key==='Enter')toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<section id="hero" style="min-height: 50vh;">
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1920&q=80'); filter: brightness(0.3) saturate(1.5);"></div>
+  <div class="hero-content" style="padding-top: 10rem;">
+    <h1 class="hero-title"><span class="t-red">About</span> <span class="t-blue">3Dline</span></h1>
+    <p class="hero-sub">The Ultimate Gaming Destination in Beeramguda</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-hdr reveal">
+    <p class="section-tag t-blue">// OUR MISSION //</p>
+    <h2 class="section-title">WHY <span class="accent-red">CHOOSE US</span></h2>
+    <div class="divider"></div>
+  </div>
+  
+  <div class="contact-inner reveal" style="text-align: left;">
+    <p class="card-desc" style="font-size: 1.1rem; margin-bottom: 2rem;">At 3Dline VR Gaming Hub, we are passionate about bringing the future of entertainment to Beeramguda, Hyderabad. We provide a premium, high-energy environment where gamers of all ages can experience the latest in Virtual Reality, high-end PS5 console gaming, and heart-pounding racing simulators.</p>
+    
+    <p class="card-desc" style="font-size: 1.1rem; margin-bottom: 2rem;">Not into digital screens? We've got you covered with our top-of-the-line physical table sports, including professional-grade Pool, fast-paced Foosball, and intense Air Hockey.</p>
+    
+    <h3 class="card-name" style="margin-top: 3rem; margin-bottom: 1rem; color: var(--blue);">FREQUENTLY ASKED QUESTIONS</h3>
+    
+    <div style="margin-bottom: 1.5rem; border-left: 3px solid var(--red); padding-left: 1rem;">
+      <h4 style="font-family: var(--ff-sub); font-size: 1.2rem; color: #fff;">Do I need to book in advance?</h4>
+      <p class="card-desc">While walk-ins are welcome, we highly recommend booking in advance, especially on weekends, to secure your VR station or Pool table.</p>
+    </div>
+
+    <div style="margin-bottom: 1.5rem; border-left: 3px solid var(--blue); padding-left: 1rem;">
+      <h4 style="font-family: var(--ff-sub); font-size: 1.2rem; color: #fff;">Will VR make me motion sick?</h4>
+      <p class="card-desc">Our high-end VR headsets have excellent refresh rates that minimize motion sickness. We also offer stationary experiences perfect for beginners!</p>
+    </div>
+
+    <div style="margin-bottom: 1.5rem; border-left: 3px solid var(--red); padding-left: 1rem;">
+      <h4 style="font-family: var(--ff-sub); font-size: 1.2rem; color: #fff;">Do you host birthday parties?</h4>
+      <p class="card-desc">Yes! 3Dline is the perfect venue for parties and corporate events. Contact us for special group rates and packages.</p>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════ FOOTER ═══════════════════════════ -->
+<footer role="contentinfo">
+  <p>
+    &copy; 2026 <a href="#hero">3Dline VR Gaming Hub</a>.
+    All rights reserved.&nbsp;|&nbsp;Powered by next-gen entertainment.
+  </p>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ══════════════════════════ -->
+<script src="main.js" defer></script>
+
+</body>
+</html>

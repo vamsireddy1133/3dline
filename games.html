@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Play VR games, PS5 & PC titles, and a pro Car Racing Simulator at 3Dline VR Gaming Hub in Beeramguda, Hyderabad. Book your session: 630-396-1947." />
+  <title>VR, PS5 &amp; Car Simulator | Digital Games | 3Dline VR Gaming Hub</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════ LOADER ════════════════════════════ -->
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-text">3DLINE VR GAMING HUB</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ═══════════════ NAVBAR ═══════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="3Dline VR Gaming Hub Home">3DLINE VR GAMING HUB</a>
+
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="games.html">Games</a></li>
+    <li><a href="table-sports.html">Table Sports</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger" role="button" tabindex="0"
+       aria-label="Toggle menu" aria-expanded="false"
+       onclick="toggleMenu()" onkeydown="if(event.key==='Enter')toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<section id="hero" style="min-height: 50vh;">
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=1920&q=80'); filter: brightness(0.3) saturate(1.5);"></div>
+  <div class="hero-content" style="padding-top: 10rem;">
+    <h1 class="hero-title"><span class="t-red">Digital</span> <span class="t-blue">Experiences</span></h1>
+    <p class="hero-sub">Immerse yourself in next-gen virtual reality and console gaming.</p>
+  </div>
+</section>
+<!-- ═══════════════ DIGITAL GAMING ══════════════════ -->
+<section class="section" id="games" aria-labelledby="gamesTitle">
+  <div class="section-hdr reveal">
+    <p class="section-tag t-blue">// DIGITAL EXPERIENCES //</p>
+    <h2 class="section-title" id="gamesTitle">GAMING <span class="accent-red">ZONE</span></h2>
+    <div class="divider"></div>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" role="group" aria-label="Filter games by category">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="vr">VR</button>
+    <button class="filter-btn" data-filter="console">Console</button>
+    <button class="filter-btn" data-filter="racing">Racing</button>
+  </div>
+
+  <div class="cards-grid" id="gamesGrid">
+
+    <!-- VR Games -->
+    <article class="game-card" data-cat="vr">
+      <div class="card-img">
+        <img
+          src="https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=800&q=80"
+          alt="Player wearing a VR headset immersed in a virtual reality game"
+          loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&q=80'"
+        />
+        <span class="card-badge badge-red">HOT</span>
+      </div>
+      <div class="card-body">
+        <div class="card-icon" aria-hidden="true">🥽</div>
+        <h3 class="card-name">VR Games</h3>
+        <p class="card-desc">Immerse yourself in next-gen virtual reality. Step inside worlds beyond imagination with our cutting-edge VR systems.</p>
+      </div>
+    </article>
+
+    <!-- PS5 & PC -->
+    <article class="game-card" data-cat="console">
+      <div class="card-img">
+        <img
+          src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&q=80"
+          alt="PlayStation 5 console and controller on display"
+          loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80'"
+        />
+        <span class="card-badge badge-red">PS5</span>
+      </div>
+      <div class="card-body">
+        <div class="card-icon" aria-hidden="true">🎮</div>
+        <h3 class="card-name">PS5 &amp; PC Games</h3>
+        <p class="card-desc">Play the latest AAA titles on PlayStation 5 and high-end gaming PCs with ultra-fast framerates and 4K visuals.</p>
+      </div>
+    </article>
+
+    <!-- Car Simulator -->
+    <article class="game-card" data-cat="racing">
+      <div class="card-img">
+        <img
+          src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=800&q=80"
+          alt="Professional racing cockpit car simulator with steering wheel and pedals"
+          loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'"
+        />
+        <span class="card-badge badge-red">THRILL</span>
+      </div>
+      <div class="card-body">
+        <div class="card-icon" aria-hidden="true">🏎️</div>
+        <h3 class="card-name">Car Simulator</h3>
+        <p class="card-desc">Feel the rush of a full racing cockpit — real steering wheel, pedals, and multi-screen setup for ultimate immersion.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════════════════ -->
+<footer role="contentinfo">
+  <p>
+    &copy; 2026 <a href="#hero">3Dline VR Gaming Hub</a>.
+    All rights reserved.&nbsp;|&nbsp;Powered by next-gen entertainment.
+  </p>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ══════════════════════════ -->
+<script src="main.js" defer></script>
+
+</body>
+</html>
