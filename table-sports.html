@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Play Pool Table, Foosball, and Air Hockey at 3Dline VR Gaming Hub in Beeramguda, Hyderabad. Classic table sports for all ages. Call 630-396-1947." />
-  <title>Pool Table, Foosball &amp; Air Hockey | Table Sports | 3Dline VR Gaming Hub</title>
+  <meta name="description" content="3Dline VR Gaming Hub — Beeramguda's best gaming destination. Enjoy VR, PS5, Car Simulator, Pool, Foosball & Air Hockey. Call 630-396-1947 to book your session!" />
+  <title>3Dline VR Gaming Hub | Best Gaming Center in Beeramguda, Hyderabad</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,7 +14,9 @@
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <!-- Three.js 3D background -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <!-- VanillaTilt 3D card hover -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
 
   <link rel="stylesheet" href="style.css">
@@ -48,7 +50,7 @@
 
 
 <section id="hero" style="min-height: 50vh;">
-  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=1920&q=80'); filter: brightness(0.3) saturate(1.5);"></div>
+  <div class="hero-bg" style="background-image: url('table_sports_hero_1778766433249.png'); filter: brightness(0.3) saturate(1.5);"></div>
   <div class="hero-content" style="padding-top: 10rem;">
     <h1 class="hero-title"><span class="t-blue">Table</span> <span class="t-red">Sports</span></h1>
     <p class="hero-sub">Classic physical games for friends and family.</p>
@@ -63,61 +65,168 @@
   </div>
 
   <div class="cards-grid">
-
     <!-- Pool Table -->
     <article class="game-card card-blue">
       <div class="card-img">
-        <img
-          src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80"
-          alt="Billiards pool table"
-          loading="lazy"
-          onerror="this.src='https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&q=80'"
-        />
+        <img src="pool_table_1778765773397.png" alt="Pool Table" loading="lazy" />
         <span class="card-badge badge-blue">CLASSIC</span>
       </div>
       <div class="card-body">
         <div class="card-icon" aria-hidden="true">🎱</div>
         <h3 class="card-name">Pool Table</h3>
-        <p class="card-desc">Premium billiards table for competitive or casual play. A timeless game perfect for friends and family gatherings.</p>
+        <p class="card-desc">Premium billiards table for competitive or casual play with friends.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.8rem;">
+          <span style="font-family: var(--ff-head); color: var(--blue); font-size: 0.9rem;">{30 Minutes}</span>
+          <span style="font-family: var(--ff-head); color: var(--red); font-size: 1.1rem; font-weight: 700;">200/-</span>
+        </div>
       </div>
     </article>
 
-    <!-- Foosball -->
+    <!-- Foosball Table -->
     <article class="game-card card-blue">
       <div class="card-img">
-        <img
-          src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=800&q=80"
-          alt="Foosball table game"
-          loading="lazy"
-          onerror="this.src='https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&q=80'"
-        />
+        <img src="foosball_table_1778765788667.png" alt="Foosball Table" loading="lazy" />
         <span class="card-badge badge-blue">FUN</span>
       </div>
       <div class="card-body">
         <div class="card-icon" aria-hidden="true">⚽</div>
         <h3 class="card-name">Foosball Table</h3>
-        <p class="card-desc">Fast-paced table football action. Challenge your crew and find out who has the quickest hands on the pitch.</p>
+        <p class="card-desc">Fast-paced table football action. Find out who has the quickest hands.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.8rem;">
+          <span style="font-family: var(--ff-head); color: var(--blue); font-size: 0.9rem;">{30 Min/2 Players}</span>
+          <span style="font-family: var(--ff-head); color: var(--red); font-size: 1.1rem; font-weight: 700;">200/-</span>
+        </div>
       </div>
     </article>
 
     <!-- Air Hockey -->
     <article class="game-card card-blue">
       <div class="card-img">
-        <img
-          src="https://images.unsplash.com/photo-1569524219761-7b1f0e6e7ea5?w=800&q=80"
-          alt="Air hockey table"
-          loading="lazy"
-          onerror="this.src='https://images.unsplash.com/photo-1528312635006-8ea0bc49ec63?w=800&q=80'"
-        />
+        <img src="air_hockey_1778765803262.png" alt="Air Hockey Table" loading="lazy" />
         <span class="card-badge badge-blue">INTENSE</span>
       </div>
       <div class="card-body">
         <div class="card-icon" aria-hidden="true">🏒</div>
-        <h3 class="card-name">Air Hockey</h3>
-        <p class="card-desc">Hover-puck battles at lightning speed. One of the most exciting head-to-head games you can play with any age group.</p>
+        <h3 class="card-name">Air Hockey Table</h3>
+        <p class="card-desc">Hover-puck battles at lightning speed. Exciting head-to-head competition.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.8rem;">
+          <span style="font-family: var(--ff-head); color: var(--blue); font-size: 0.9rem;">{30 Minutes}</span>
+          <span style="font-family: var(--ff-head); color: var(--red); font-size: 1.1rem; font-weight: 700;">200/-</span>
+        </div>
       </div>
     </article>
 
+    <!-- Massage Chair -->
+    <article class="game-card card-blue">
+      <div class="card-img">
+        <img src="massage_chair_1778765822827.png" alt="Massage Chair" loading="lazy" />
+        <span class="card-badge badge-blue">RELAX</span>
+      </div>
+      <div class="card-body">
+        <div class="card-icon" aria-hidden="true">🛋️</div>
+        <h3 class="card-name">Massage Chair</h3>
+        <p class="card-desc">Relax and unwind in our futuristic luxury massage chair.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.8rem;">
+          <span style="font-family: var(--ff-head); color: var(--blue); font-size: 0.9rem;">{10 Minutes}</span>
+          <span style="font-family: var(--ff-head); color: var(--red); font-size: 1.1rem; font-weight: 700;">100/-</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Cross Trainer -->
+    <article class="game-card card-blue">
+      <div class="card-img">
+        <img src="cross_trainer_1778765837178.png" alt="Cross Trainer" loading="lazy" />
+        <span class="card-badge badge-blue">FITNESS</span>
+      </div>
+      <div class="card-body">
+        <div class="card-icon" aria-hidden="true">🏃</div>
+        <h3 class="card-name">Cross Trainer</h3>
+        <p class="card-desc">Get a quick workout on our modern elliptical cross trainer machine.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.8rem;">
+          <span style="font-family: var(--ff-head); color: var(--blue); font-size: 0.9rem;">{30 Minutes}</span>
+          <span style="font-family: var(--ff-head); color: var(--red); font-size: 1.1rem; font-weight: 700;">50/-</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════════ TESTIMONIALS ═════════════════════ -->
+<section class="section" id="testimonials" aria-label="Customer testimonials">
+  <div class="section-hdr reveal">
+    <p class="section-tag t-blue">// HAPPY GAMERS //</p>
+    <h2 class="section-title">WHAT THEY <span class="accent-red">SAY</span></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="testi-carousel" id="testiCarousel">
+    <div class="testi-track" id="testiTrack" aria-live="polite">
+
+      <div class="testi-slide active">
+        <blockquote class="testi-card">
+          <span class="testi-quote" aria-hidden="true">"</span>
+          <p class="testi-text">The VR experience at 3Dline is absolutely mind-blowing! I felt like I was truly inside the game. Best gaming hub in all of Hyderabad — will come back every weekend!</p>
+          <footer class="testi-author">
+            <img src="face_arjun_1778766188641.png" alt="Arjun Reddy" class="testi-avatar" />
+            <div>
+              <div class="testi-name">Arjun Reddy</div>
+              <div class="testi-role">VR Gamer &nbsp;★★★★★</div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+
+      <div class="testi-slide">
+        <blockquote class="testi-card">
+          <span class="testi-quote" aria-hidden="true">"</span>
+          <p class="testi-text">Brought my whole friend group for the Car Simulator and we had an epic time! The cockpit setup is so realistic — it feels just like driving on an actual race track.</p>
+          <footer class="testi-author">
+            <img src="face_priya_1778766215761.png" alt="Priya Kumar" class="testi-avatar" />
+            <div>
+              <div class="testi-name">Priya Kumar</div>
+              <div class="testi-role">Car Sim Enthusiast &nbsp;★★★★★</div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+
+      <div class="testi-slide">
+        <blockquote class="testi-card">
+          <span class="testi-quote" aria-hidden="true">"</span>
+          <p class="testi-text">My kids absolutely loved the Foosball and Air Hockey! The atmosphere is incredible — dark neon lights, pumping music. Perfect for a family night out in Beeramguda!</p>
+          <footer class="testi-author">
+            <img src="face_vikram_1778766230533.png" alt="Vikram Sharma" class="testi-avatar" />
+            <div>
+              <div class="testi-name">Vikram Sharma</div>
+              <div class="testi-role">Family Visitor &nbsp;★★★★★</div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+
+      <div class="testi-slide">
+        <blockquote class="testi-card">
+          <span class="testi-quote" aria-hidden="true">"</span>
+          <p class="testi-text">We hosted our company team-building event here. PS5 stations and Pool tables kept everyone engaged for hours. 3Dline delivered a premium experience from start to finish!</p>
+          <footer class="testi-author">
+            <img src="face_neha_1778766244936.png" alt="Neha Mehta" class="testi-avatar" />
+            <div>
+              <div class="testi-name">Neha Mehta</div>
+              <div class="testi-role">Corporate Events &nbsp;★★★★★</div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+
+    </div>
+
+    <div class="testi-controls" aria-label="Testimonial navigation">
+      <button class="testi-dot active" data-idx="0" aria-label="Show testimonial 1"></button>
+      <button class="testi-dot" data-idx="1" aria-label="Show testimonial 2"></button>
+      <button class="testi-dot" data-idx="2" aria-label="Show testimonial 3"></button>
+      <button class="testi-dot" data-idx="3" aria-label="Show testimonial 4"></button>
+    </div>
   </div>
 </section>
 

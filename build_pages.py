@@ -32,7 +32,7 @@ with open('games.html', 'w', encoding='utf-8') as f:
 # --- 3. TABLE SPORTS PAGE (table-sports.html) ---
 table_hero = """
 <section id="hero" style="min-height: 50vh;">
-  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=1920&q=80'); filter: brightness(0.3) saturate(1.5);"></div>
+  <div class="hero-bg" style="background-image: url('table_sports_hero_1778766433249.png'); filter: brightness(0.3) saturate(1.5);"></div>
   <div class="hero-content" style="padding-top: 10rem;">
     <h1 class="hero-title"><span class="t-blue">Table</span> <span class="t-red">Sports</span></h1>
     <p class="hero-sub">Classic physical games for friends and family.</p>
